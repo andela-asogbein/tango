@@ -21,7 +21,8 @@ module.exports = function(app){
         }
         return res.json(result);
       })
-    })
+    });
+
 app.use("/",userRouter);
 
 }
