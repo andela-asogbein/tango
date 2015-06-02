@@ -22,10 +22,6 @@ module.exports = function(app){
         return res.json(result);
       })
     })
-  userRouter.route("/")
-    .get(function(req,res){
-      res.send("../public/index.html");
-    })
 app.use("/",userRouter);
 
 }
