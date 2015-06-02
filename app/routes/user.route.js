@@ -5,7 +5,7 @@ require("../model/user.model");
 var Users = mongoose.model("Users");
 
 module.exports = function(app){
-  userRouter.route("/")
+  userRouter.route("/subscribe")
     .post(function(req,res){
       Users.create(req.body, function(err,result){
         if(err){
@@ -22,7 +22,11 @@ module.exports = function(app){
         return res.json(result);
       })
     })
-app.use("/subscribe",userRouter);
+  userRouter.route("/")
+    .get(function(req,res){
+      res.send("../public/index.html");
+    })
+app.use("/",userRouter);
 
 }
 
