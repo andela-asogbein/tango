@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/tangoDb');
 
-// app.use(express.static("../public"));
+app.use(express.static("../public/"));
 
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
