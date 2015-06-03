@@ -1,7 +1,7 @@
 angular.module("Tango",[])
   .factory("userService",['$http',function($http){
-    var baseUrl = "http://localhost:3000/subscribe";
-    // var baseUrl = "https://api.github.com/users/andela-ssunday";
+    //var baseUrl = "https://localhost:3000/subscribe";
+    var baseUrl =  "https://tangong.herokuapp.com/subscribe";
     return{
       save: function(data){
         return $http.post(baseUrl,{email:data});
