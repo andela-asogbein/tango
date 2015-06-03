@@ -109,8 +109,9 @@
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h5>We are launching in the next FOUR WEEKS! Subscribe and receive recharge cards. Subscribe now by entering your email to recieve free &#8358;2000 credit on Tango when we launch.</h5>
           <div ng-if="displayForm">
-            <input type="email" ng-model="mail" placeholder="you@example.com"/>
-            <a class="waves-effect waves-light btn" ng-click="subscribe(mail)">Subscribe</a>
+            <div><h4 class='warning' style='color:red'>{{displayNotif}}</h4></div>
+            <input type="email" ng-model="mail" required="required" placeholder="you@example.com"/>
+            <a class="waves-effect waves-light btn" ng-click="subscribe(mail)" >Subscribe</a>
           </div>
           <div ng-if="displayMessage">
             <h3>Thank you for subscribing!</h3>

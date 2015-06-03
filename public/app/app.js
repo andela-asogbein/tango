@@ -15,7 +15,12 @@ angular.module("Tango",[])
   .controller("userCtrl",['$scope','userService',function($scope,userService){
     $scope.displayForm = true;
     $scope.displayMessage = false;
+    $scope.displayNotif = '';
     $scope.subscribe = function(email){
+    if(!email){
+      $scope.displayNotif = "Please Enter an Email";
+      return;
+    }
     userService.get().success(function(data){
       console.log(data)
     })
@@ -23,6 +28,8 @@ angular.module("Tango",[])
         .success(function(data){
           $scope.displayForm = false;
           $scope.displayMessage = true;
+          $scope.displayNotif = '';
+
         });
     }
 
