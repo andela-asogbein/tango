@@ -16,14 +16,11 @@ angular.module("Tango",[])
     $scope.displayForm = true;
     $scope.displayMessage = false;
     $scope.subscribe = function(email){
-      console.log(1,email);
     userService.get().success(function(data){
       console.log(data)
     })
-    console.log(2,email);
     userService.save(email)
         .success(function(data){
-          console.log("successfull");
           $scope.displayForm = false;
           $scope.displayMessage = true;
         });
